@@ -1,6 +1,6 @@
 # DermaSense AI: Skin Disease Detection & Early Screening System
 
-**Dr. N.G.P. Institute of Technology, Coimbatore**  
+**Skin Disease Detection & Clinical Screening System**  
 **Course:** 22UCS407 – IDEA AND DESIGN SPRINT / 22UOC205-STEM PROJECT  
 **Team:** Roketh M, Sridhar Jeyaram B, Mirudul Vikash V  
 **Guide:** Mr. M. Tamilarasan (Ph.D.)

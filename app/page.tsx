@@ -17,7 +17,7 @@ export default async function DashboardPage() {
             <ShieldCheck className="w-5 h-5 text-medical-teal" />
             <h2 className="font-bold text-sm tracking-wider uppercase">DermaSense AI</h2>
           </div>
-          <p className="text-2xl font-extrabold mb-1">Dr. N.G.P. Tech</p>
+          <p className="text-2xl font-extrabold mb-1">Skin Disease Detection</p>
           <p className="text-slate-300 text-sm leading-relaxed mb-6">
             Early detection screening platform mapping dermatoscopic anomalies in real-time.
           </p>

@@ -12,16 +12,9 @@ export async function Header() {
         <h1 className="font-bold text-lg text-medical-slate tracking-tight">DermaSense AI</h1>
       </div>
       <div className="flex items-center gap-3">
-        <div className="text-[10px] uppercase font-semibold text-medical-slate/70 bg-medical-light px-2 py-1 rounded-full border border-medical-border hidden sm:block">
-          Dr. N.G.P. iTech
+        <div className="text-[10px] uppercase font-semibold text-medical-teal bg-medical-light px-2.5 py-1 rounded-full border border-medical-border">
+          Skin Disease Detection
         </div>
-        {session?.isAuth && (
-          <form action={signOut}>
-            <button type="submit" className="p-2 text-slate-500 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors flex items-center gap-1" title="Log Out">
-              <LogOut className="w-4 h-4" />
-            </button>
-          </form>
-        )}
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-import { User, LogOut, LogIn, Activity, Calendar, Shield } from "lucide-react";
+import { User, LogOut, Activity, Calendar, Shield } from "lucide-react";
 import { verifySession } from "@/lib/session";
 import { signOut } from "@/app/actions/auth-actions";
 import Link from "next/link";
@@ -66,26 +66,16 @@ export default async function ProfilePage() {
              
           </div>
 
-          <div className="mt-6">
-            {isAuth ? (
-              <form action={signOut}>
-                <button type="submit" className="w-full flex items-center justify-center gap-2 py-4 bg-white border border-red-100 text-red-500 rounded-xl font-bold shadow-sm hover:bg-red-50 transition-colors">
-                  <LogOut className="w-5 h-5" />
-                  Secure Sign Out
-                </button>
-              </form>
-            ) : (
-              <Link href="/sign-in" className="w-full flex items-center justify-center gap-2 py-4 bg-medical-slate text-white rounded-xl font-bold shadow-sm hover:bg-slate-800 transition-colors">
-                 <LogIn className="w-5 h-5" />
-                 Create Account / Sign In
-              </Link>
-            )}
-            
-            {!isAuth && (
-              <p className="text-center text-xs text-slate-400 mt-4 px-4 leading-relaxed">
-                You are viewing the DermaSense AI platform as a guest. Test records are stored in a common demo pool.
-              </p>
-            )}
+          <div className="mt-4 flex flex-col gap-3">
+            <form action={signOut} className="w-full">
+              <button 
+                type="submit" 
+                className="w-full flex items-center justify-center gap-2 py-4 bg-white border border-red-200 text-red-600 rounded-xl font-bold shadow-sm hover:bg-red-50 hover:border-red-300 transition-colors"
+              >
+                <LogOut className="w-5 h-5 text-red-500" />
+                Log Out
+              </button>
+            </form>
           </div>
         </div>
       </div>
