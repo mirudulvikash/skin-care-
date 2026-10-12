@@ -34,8 +34,6 @@ export async function signUp(formData: FormData) {
       [id, name, email, passwordHash]
     );
 
-    await createSession(id, name, email);
-
     // Trigger the welcome email (non-blocking)
     sendWelcomeEmail(email, name).catch(console.error);
 
@@ -44,6 +42,12 @@ export async function signUp(formData: FormData) {
     return { error: "An unexpected error occurred" };
   }
 
+  // After signup, redirect to login page as requested
+  redirect("/sign-in?registered=true");
+}
+
+export async function continueAsGuest() {
+  await createSession("guest_id", "Guest User", "guest@dermasense.local");
   redirect("/");
 }
 
@@ -80,4 +84,34 @@ export async function signIn(formData: FormData) {
 export async function signOut() {
   await deleteSession();
   redirect("/sign-in");
+}
+
+export async function resetPassword(formData: FormData) {
+  const email = formData.get("email") as string;
+  const newPassword = formData.get("newPassword") as string;
+
+  if (!email || !newPassword) {
+    return { error: "Email and new password are required" };
+  }
+
+  if (newPassword.length < 8) {
+    return { error: "New password must be at least 8 characters long" };
+  }
+
+  try {
+    const userResult = await query("SELECT id FROM users WHERE email = $1", [email]);
+    if (userResult.rows.length === 0) {
+      return { error: "No account found with this email address" };
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const passwordHash = await bcrypt.hash(newPassword, salt);
+
+    await query("UPDATE users SET password_hash = $1 WHERE email = $2", [passwordHash, email]);
+  } catch (error) {
+    console.error("Reset password error:", error);
+    return { error: "Failed to update password" };
+  }
+
+  redirect("/sign-in?reset=true");
 }

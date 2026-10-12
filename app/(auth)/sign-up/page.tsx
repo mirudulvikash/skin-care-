@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, UserPlus } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
 import { signUp } from '@/app/actions/auth-actions';
 
 export default function SignUpPage() {
@@ -10,13 +10,6 @@ export default function SignUpPage() {
       <div className="absolute -bottom-1/4 -left-1/4 w-full h-[500px] bg-gradient-to-tr from-blue-100/50 to-indigo-100/50 blur-3xl rounded-full" />
       
       <div className="relative w-full max-w-md p-8 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-2xl shadow-xl z-10 mx-4">
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors mb-4"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          Back to Dashboard
-        </Link>
 
         <div className="mb-6 text-center">
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">Create Account</h1>

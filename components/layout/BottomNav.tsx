@@ -7,6 +7,10 @@ import { usePathname } from "next/navigation";
 export function BottomNav() {
   const pathname = usePathname();
 
+  if (pathname === '/sign-in' || pathname === '/sign-up' || pathname === '/forgot-password') {
+    return null;
+  }
+
   const tabs = [
     { name: "Home", href: "/", icon: Home },
     { name: "Scan", href: "/scan", icon: Scan },
