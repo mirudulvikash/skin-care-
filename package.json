@@ -1,0 +1,47 @@
+{
+  "name": "skin-care-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:init": "node scripts/init-db.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.6.1",
+    "bcryptjs": "^3.0.3",
+    "canvg": "^4.0.1",
+    "clsx": "^2.1.0",
+    "dompurify": "^3.1.5",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.8",
+    "html2canvas": "^1.4.1",
+    "jose": "^6.2.12",
+    "jspdf": "^2.5.1",
+    "lucide-react": "^1.52.0",
+    "next": "^16.3.8",
+    "pg": "^8.23.1",
+    "postcss": "^8.5.29",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^2.12.0",
+    "resend": "^6.32.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1"
+  }
+}
